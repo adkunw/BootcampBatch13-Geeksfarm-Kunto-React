@@ -4,7 +4,8 @@ import Nav from "./nav";
 // import Jam from "./jam";
 // import GetImage from "./unsplashGetImageOrganized";
 // import GetImage from "./unsplashGetImage";
-import APIYoutube from "./APIYoutube";
+// import APIYoutube from "./APIYoutube";
+import EmployeeForm from "./employeeForm";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       {/* <Jam />
       <ButtonClick />
       <Comment /> */}
-      <APIYoutube />
+      {/* <APIYoutube /> */}
+      {/* <GetImage /> */}
+      <EmployeeForm />
     </div>
   );
 }

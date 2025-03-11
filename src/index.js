@@ -1,14 +1,22 @@
-// Import library React untuk dapat menggunakan fitur React
+// Import library React
 import React from "react";
-
-// Import ReactDOM yang bertanggung jawab untuk merender aplikasi ke dalam DOM
 import ReactDOM from "react-dom/client";
+
+// Import Redux
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+
+// Import reducer utama
+import reducer from "./reducer";
+
+// Import komponen utama aplikasi
+import App from "./App";
 
 // Import fungsi untuk melaporkan performa aplikasi (opsional)
 import reportWebVitals from "./reportWebVitals";
 
-// Import komponen utama aplikasi, yaitu App
-import App from "./App";
+// Buat store Redux
+const store = createStore(reducer);
 
 // Cari elemen dengan id 'root' dari file index.html
 const rootElement = document.getElementById("root");
@@ -18,9 +26,11 @@ const root = ReactDOM.createRoot(rootElement);
 
 // Render aplikasi ke dalam root yang sudah dibuat
 root.render(
-  // React.StrictMode membantu dalam mendeteksi potensi masalah dalam kode
   <React.StrictMode>
-    <App />
+    {/* Hubungkan Redux dengan aplikasi menggunakan Provider */}
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
